@@ -8,7 +8,6 @@ def communism(request):
     back = Image.open("api/images/soviet.jpg")
     back = back.resize(img.size)
     blended_image = Image.blend(img, back, 0.5)
-    blended_image.show()
     response = HttpResponse(content_type="image/jpeg")
     blended_image.save(response, "JPEG")
     return response
