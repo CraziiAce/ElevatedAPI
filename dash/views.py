@@ -13,5 +13,3 @@ def dash(request):
 
 def apply(request):
     secret = settings.TOKEN_SECRET
-
-    token = make_token({"userid": user_id}, secret=secret)
