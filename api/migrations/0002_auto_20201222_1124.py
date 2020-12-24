@@ -6,22 +6,30 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0001_initial'),
+        ("api", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='TrustedToken',
+            name="TrustedToken",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('token', models.CharField(max_length=200)),
-                ('user_id', models.CharField(max_length=200)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("token", models.CharField(max_length=200)),
+                ("user_id", models.CharField(max_length=200)),
             ],
         ),
         migrations.DeleteModel(
-            name='Choice',
+            name="Choice",
         ),
         migrations.DeleteModel(
-            name='Question',
+            name="Question",
         ),
     ]

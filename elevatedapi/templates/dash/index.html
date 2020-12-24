@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Elevated API</title>
+    <meta name="description" content="Elevate is a versatile Discord bot with moderation, music, welcome messages, and more!">
+    <meta name="theme-color" content="#003F87">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta content="assets/img/logo.png" property="og:image">
+    <meta name="keywords" content="Elevate, discord, discord bot, bot, discord moderation, moderation, moderation bot, discord moderation bot, discord fun bot, server, invite, tickets, ticket bot, reaction roles bot, discord reaction roles, discord react roles bot, discord react roles, react roles bot, meme api, api, discord meme api, imgen api, image generation api, discord bot api, fun api">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i">
+    <link rel="stylesheet" href="http://elevatebot.xyz/assets/css/styles.css">
+</head>
+
+  <body style="background-color: #003F87;">
+    {% block body %}
+
+    <div>
+      <strong>Menu:</strong>
+      <ul>
+  {% if user.is_authenticated %}
+  {% load account %}
+	<p>Hello, {% user_display user %}</p>
+  
+	{% else %}
+	<li><a href="{% url 'account_login' %}">Sign In</a></li>
+	<li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+	{% endif %}
+      </ul>
+    </div>
+    {% block content %}
+    {% endblock %}
+    {% endblock %}
+    {% block extra_body %}
+    {% endblock %}
+  </body>
+</html>
